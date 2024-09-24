@@ -7,9 +7,18 @@ class AppTheme {
     fontFamily: 'RobotoMono',
     primaryColor: AppColors.brandPrimaryColor,
     textTheme: const TextTheme(
-      displayLarge: TextStyle(fontSize: 48.0, fontWeight: FontWeight.bold),
-      displayMedium: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
-      displaySmall: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+      displayLarge: TextStyle(
+          fontSize: 48.0,
+          fontWeight: FontWeight.bold,
+          color: AppColors.brandLightColor),
+      displayMedium: TextStyle(
+          fontSize: 24.0,
+          fontWeight: FontWeight.bold,
+          color: AppColors.brandLightColor),
+      displaySmall: TextStyle(
+          fontSize: 16.0,
+          fontWeight: FontWeight.bold,
+          color: AppColors.brandLightColor),
       headlineLarge:
           TextStyle(fontSize: 21.0, color: AppColors.brandPrimaryColor),
       bodyLarge: TextStyle(fontSize: 14.0),
