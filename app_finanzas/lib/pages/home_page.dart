@@ -5,23 +5,42 @@ import 'package:app_finanzas/widgets/product_detail.dart';
 import 'package:app_finanzas/widgets/summary_card.dart';
 import 'package:flutter/material.dart';
 
-var buttonStyleInactive = ElevatedButton.styleFrom(
-  elevation: 0,
-  backgroundColor: AppColors.brandLightColor,
-  shadowColor: AppColors.brandLightColor,
-  shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(12), // <-- Radius
-  ),
-);
-var buttonStyleActive = ElevatedButton.styleFrom(
-  backgroundColor: AppColors.brandSecondaryColor,
-  shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(12), // <-- Radius
-  ),
-);
+class HomePage extends StatefulWidget {
+  final String storeName;
+  const HomePage({
+    super.key,
+    required this.storeName,
+  });
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  var buttonStyleInactive = ElevatedButton.styleFrom(
+    elevation: 0,
+    backgroundColor: AppColors.brandLightColor,
+    shadowColor: AppColors.brandLightColor,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(12), // <-- Radius
+    ),
+  );
+  var buttonStyleActive = ElevatedButton.styleFrom(
+    backgroundColor: AppColors.brandSecondaryColor,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(12), // <-- Radius
+    ),
+  );
+  Widget currentDetailWitget = const CategoriesWidget();
+  late ButtonStyle categorieBtnStyle;
+  late ButtonStyle recentTransactionsBtnStyle;
+
+  @override
+  void initState() {
+    super.initState();
+    categorieBtnStyle = buttonStyleActive;
+    recentTransactionsBtnStyle = buttonStyleInactive;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,22 +54,36 @@ class HomePage extends StatelessWidget {
         ),
         toolbarHeight: 97,
         backgroundColor: AppColors.brandLightColor,
-        title: const Padding(
-          padding: EdgeInsets.fromLTRB(16, 45, 16, 12),
-          child: HomeAppBarTitle(),
+        title: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 45, 16, 12),
+          child: HomeAppBarTitle(
+            storeName: widget.storeName,
+          ),
         ),
       ),
       body: Column(
         children: [
           const TopHomePageBody(),
           MidHomePageBody(
-            categorieBtnStyle: buttonStyleActive,
-            recentTransactionsBtnStyle: buttonStyleInactive,
-            categoriesBtnAction: () => print('categories'),
-            recentBtnAction: () => print('recent'),
+            categorieBtnStyle: categorieBtnStyle,
+            recentTransactionsBtnStyle: recentTransactionsBtnStyle,
+            categoriesBtnAction: () {
+              setState(() {
+                currentDetailWitget = const CategoriesWidget();
+                categorieBtnStyle = buttonStyleActive;
+                recentTransactionsBtnStyle = buttonStyleInactive;
+              });
+            },
+            recentBtnAction: () {
+              setState(() {
+                currentDetailWitget = const RecentTransactions();
+                categorieBtnStyle = buttonStyleInactive;
+                recentTransactionsBtnStyle = buttonStyleActive;
+              });
+            },
           ),
-          const Expanded(
-            child: CategoriesWidget(),
+          Expanded(
+            child: currentDetailWitget,
           )
         ],
       ),
@@ -169,7 +202,7 @@ class MidHomePageBody extends StatelessWidget {
               child: Text(
                 'Recent transaction',
                 style: TextStyle(
-                  color: AppColors.brandLigthDarkColor,
+                  color: AppColors.brandLightDarkColor,
                   fontSize: 14,
                 ),
               ),
@@ -225,6 +258,20 @@ class CategoriesWidget extends StatelessWidget {
           percentage: '25.8',
         ),
       ],
+    );
+  }
+}
+
+class RecentTransactions extends StatelessWidget {
+  const RecentTransactions({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        'Este es el reto',
+        style: Theme.of(context).textTheme.headlineLarge,
+      ),
     );
   }
 }

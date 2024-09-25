@@ -1,5 +1,7 @@
+import 'package:app_finanzas/config/app_routes.dart';
 import 'package:app_finanzas/design/themes.dart';
-import 'package:app_finanzas/pages/home.dart';
+import 'package:app_finanzas/pages/home_page.dart';
+import 'package:app_finanzas/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 class FinanceApp extends StatelessWidget {
@@ -10,7 +12,29 @@ class FinanceApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.defaultTheme,
-      home: const HomePage(),
+      /* routes: {
+        AppRoutes.newPage: (context) => const HomePage(),
+        AppRoutes.home: (context) => const HomePage()
+      }, */
+      onGenerateRoute: (settings) {
+        switch (settings.name) {
+          case AppRoutes.login:
+            return MaterialPageRoute(
+              builder: (context) => const LoginPage(),
+            );
+          case AppRoutes.home:
+            return MaterialPageRoute(
+              builder: (context) => HomePage(
+                storeName: settings.arguments as String,
+              ),
+            );
+
+          default:
+            return MaterialPageRoute(
+              builder: (context) => const LoginPage(),
+            );
+        }
+      },
     );
   }
 }

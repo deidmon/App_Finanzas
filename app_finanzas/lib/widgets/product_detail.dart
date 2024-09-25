@@ -93,7 +93,7 @@ class ProductDetailCard extends StatelessWidget {
                     child: Text(
                       '+ \$ $currentSells Today',
                       style: const TextStyle(
-                        color: AppColors.brandLigthDarkColor,
+                        color: AppColors.brandLightDarkColor,
                         fontFamily: 'RobotoMono',
                         fontSize: 10,
                       ),
