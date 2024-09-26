@@ -1,8 +1,10 @@
+import 'package:app_finanzas/config/app_routes.dart';
 import 'package:app_finanzas/design/colors.dart';
 import 'package:app_finanzas/widgets/custom_money_display.dart';
 import 'package:app_finanzas/widgets/home_app_bar_title.dart';
 import 'package:app_finanzas/widgets/product_detail.dart';
 import 'package:app_finanzas/widgets/summary_card.dart';
+import 'package:app_finanzas/widgets/transaction_detail.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -45,6 +47,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.brandLightBackgroundColor,
       appBar: AppBar(
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
@@ -176,21 +179,22 @@ class MidHomePageBody extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           ElevatedButton(
-              style: categorieBtnStyle,
-              onPressed: categoriesBtnAction,
-              child: const Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: 16,
-                  horizontal: 40,
+            style: categorieBtnStyle,
+            onPressed: categoriesBtnAction,
+            child: const Padding(
+              padding: EdgeInsets.symmetric(
+                vertical: 16,
+                horizontal: 40,
+              ),
+              child: Text(
+                'Categories',
+                style: TextStyle(
+                  color: AppColors.brandDarkColor,
+                  fontSize: 14,
                 ),
-                child: Text(
-                  'Categories',
-                  style: TextStyle(
-                    color: AppColors.brandDarkColor,
-                    fontSize: 14,
-                  ),
-                ),
-              )),
+              ),
+            ),
+          ),
           ElevatedButton(
             style: recentTransactionsBtnStyle,
             onPressed: recentBtnAction,
@@ -226,8 +230,10 @@ class CategoriesWidget extends StatelessWidget {
           child: const Text(
             'View All',
             style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Color.fromRGBO(53, 97, 254, 1)),
+              fontWeight: FontWeight.bold,
+              fontSize: 13,
+              color: Color.fromRGBO(53, 97, 254, 1),
+            ),
           ),
           onPressed: () {
             print('le diste clic a view all');
@@ -267,10 +273,66 @@ class RecentTransactions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Este es el reto',
-        style: Theme.of(context).textTheme.headlineLarge,
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: ListView(
+        children: [
+          TextButton(
+            style: const ButtonStyle(alignment: Alignment.centerRight),
+            child: const Text(
+              'View All',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 13,
+                  color: Color.fromRGBO(53, 97, 254, 1)),
+            ),
+            onPressed: () {
+              Navigator.of(context).pushNamed(AppRoutes.allTransactions);
+            },
+          ),
+          TransactionDetailByDay(
+            day: 'TUE',
+            isToday: true,
+            dayNumber: 4,
+            listofTransactions: [
+              TransactionDetail(
+                  movementName: 'Movement Name',
+                  transactionDate: 'Monday 3th,  September 2023',
+                  typeTransaction: TypeTransaction.negative,
+                  amount: 420.16),
+              TransactionDetail(
+                  movementName: 'Movement Name',
+                  transactionDate: 'Monday 3th,  September 2023',
+                  typeTransaction: TypeTransaction.positive,
+                  amount: 433.35)
+            ],
+          ),
+          const SizedBox(
+            height: 24,
+          ),
+          TransactionDetailByDay(
+            day: 'MON',
+            isToday: false,
+            dayNumber: 3,
+            listofTransactions: [
+              TransactionDetail(
+                  movementName: 'Movement Name',
+                  transactionDate: 'Monday 3th,  September 2023',
+                  typeTransaction: TypeTransaction.positive,
+                  amount: 720.92),
+              TransactionDetail(
+                  movementName: 'Movement Name',
+                  transactionDate: 'Monday 3th,  September 2023',
+                  typeTransaction: TypeTransaction.negative,
+                  amount: 84.45),
+              TransactionDetail(
+                  movementName: 'Movement Name',
+                  transactionDate: 'Monday 3th,  September 2023',
+                  typeTransaction: TypeTransaction.positive,
+                  amount: 137.26)
+            ],
+          )
+        ],
       ),
     );
   }

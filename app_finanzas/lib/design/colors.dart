@@ -23,4 +23,6 @@ class AppColors {
   static const Color brandOnErrorColor = Color.fromRGBO(249, 56, 57, 1);
   static const Color brandSuccessColor = Color.fromRGBO(35, 159, 87, 0.2);
   static const Color brandOnSuccessColor = Color.fromRGBO(35, 159, 87, 1);
+  static const Color brandLightBackgroundColor =
+      Color.fromRGBO(244, 246, 254, 1);
 }
