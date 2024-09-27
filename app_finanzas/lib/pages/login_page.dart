@@ -1,6 +1,7 @@
 import 'package:app_finanzas/config/app_routes.dart';
 import 'package:app_finanzas/design/colors.dart';
 import 'package:app_finanzas/design/copy.dart';
+import 'package:app_finanzas/providers/user_provider.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -188,9 +189,10 @@ class LoginPageState extends State<LoginPage> {
                           if (_formLoginKey.currentState!.validate()) {
                             print('Todos los campos están OK');
                             _formLoginKey.currentState!.save();
+                            UserProvider.of(context).userData.name = userName;
                             Navigator.of(context).pushReplacementNamed(
                               AppRoutes.home,
-                              arguments: userName,
+                              /* arguments: userName, */
                             );
                           }
                         },

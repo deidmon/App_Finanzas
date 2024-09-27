@@ -1,5 +1,6 @@
 import 'package:app_finanzas/config/app_routes.dart';
 import 'package:app_finanzas/design/colors.dart';
+import 'package:app_finanzas/providers/user_provider.dart';
 import 'package:app_finanzas/widgets/custom_money_display.dart';
 import 'package:app_finanzas/widgets/home_app_bar_title.dart';
 import 'package:app_finanzas/widgets/product_detail.dart';
@@ -8,10 +9,10 @@ import 'package:app_finanzas/widgets/transaction_detail.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  final String storeName;
+  /* final String storeName; */
   const HomePage({
     super.key,
-    required this.storeName,
+    /*  required this.storeName, */
   });
 
   @override
@@ -60,7 +61,8 @@ class _HomePageState extends State<HomePage> {
         title: Padding(
           padding: const EdgeInsets.fromLTRB(16, 45, 16, 12),
           child: HomeAppBarTitle(
-            storeName: widget.storeName,
+            //storeName: widget.storeName,
+            storeName: UserProvider.of(context).userData.name,
           ),
         ),
       ),
