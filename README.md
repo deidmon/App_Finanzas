@@ -30,6 +30,16 @@ Para instalar la aplicación en tu entorno local:
    git clone https://github.com/deidmon/App_Finanzas
    cd app_finanzas
 
+2. Instala las dependencias del proyecto:
+   
+   ```bash
+   flutter pub get
+
+3. Corre la aplicación en un emulador o dispositivo físico:
+
+   ```bash
+   flutter run
+
 ## Capturas de Pantalla 📱
 ![Group 28](https://github.com/user-attachments/assets/60546203-1f54-4292-9e95-3f8afa1ca37f)
 
