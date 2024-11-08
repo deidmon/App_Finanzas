@@ -19,33 +19,33 @@ class TransactionsMocks {
           listofTransactions: [
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Tuesday 4th,  April 2023',
                 typeTransaction: TypeTransaction.negative,
                 amount: 420.16),
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Tuesday 4th,  April 2023',
                 typeTransaction: TypeTransaction.positive,
                 amount: 433.35),
           ]),
       TransactionDetailByDayModel(
           day: 'MON',
-          dayNumber: 4,
+          dayNumber: 3,
           isToday: false,
           listofTransactions: [
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Monday 3th,  April 2023',
                 typeTransaction: TypeTransaction.positive,
                 amount: 720.92),
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Monday 3th,  April 2023',
                 typeTransaction: TypeTransaction.negative,
                 amount: 84.45),
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Monday 3th,  April 2023',
                 typeTransaction: TypeTransaction.positive,
                 amount: 137.26)
           ])
@@ -53,38 +53,38 @@ class TransactionsMocks {
     TransactionDetailByMonth(month: 'March', listofTransactions: [
       TransactionDetailByDayModel(
           day: 'MON',
-          dayNumber: 4,
+          dayNumber: 7,
           isToday: false,
           listofTransactions: [
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Monday 7th,  March 2023',
                 typeTransaction: TypeTransaction.negative,
                 amount: 420.16),
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Monday 7th,  March 2023',
                 typeTransaction: TypeTransaction.positive,
                 amount: 433.35),
           ]),
       TransactionDetailByDayModel(
           day: 'SAT',
-          dayNumber: 4,
+          dayNumber: 5,
           isToday: false,
           listofTransactions: [
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Saturday 5th,  March 2023',
                 typeTransaction: TypeTransaction.positive,
                 amount: 720.92),
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Saturday 5th,  March 2023',
                 typeTransaction: TypeTransaction.negative,
                 amount: 84.45),
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Saturday 5th,  March 2023',
                 typeTransaction: TypeTransaction.positive,
                 amount: 137.26)
           ])
@@ -92,17 +92,17 @@ class TransactionsMocks {
     TransactionDetailByMonth(month: 'February', listofTransactions: [
       TransactionDetailByDayModel(
           day: 'MON',
-          dayNumber: 4,
+          dayNumber: 6,
           isToday: false,
           listofTransactions: [
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Monday 6th,  February 2023',
                 typeTransaction: TypeTransaction.negative,
                 amount: 420.16),
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Monday 6th,  February 2023',
                 typeTransaction: TypeTransaction.positive,
                 amount: 433.35),
           ]),
@@ -113,17 +113,17 @@ class TransactionsMocks {
           listofTransactions: [
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Saturday 4th,  February 2023',
                 typeTransaction: TypeTransaction.positive,
                 amount: 720.92),
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Saturday 4th,  February 2023',
                 typeTransaction: TypeTransaction.negative,
                 amount: 84.45),
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Saturday 4th,  February 2023',
                 typeTransaction: TypeTransaction.positive,
                 amount: 137.26)
           ])
@@ -131,17 +131,17 @@ class TransactionsMocks {
     TransactionDetailByMonth(month: 'January', listofTransactions: [
       TransactionDetailByDayModel(
           day: 'MON',
-          dayNumber: 4,
+          dayNumber: 6,
           isToday: false,
           listofTransactions: [
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Monday 6th,  January 2023',
                 typeTransaction: TypeTransaction.negative,
                 amount: 420.16),
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Monday 6th,  January 2023',
                 typeTransaction: TypeTransaction.positive,
                 amount: 433.35),
           ]),
@@ -152,17 +152,17 @@ class TransactionsMocks {
           listofTransactions: [
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Saturday 4th,  January 2023',
                 typeTransaction: TypeTransaction.positive,
                 amount: 720.92),
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Saturday 4th,  January 2023',
                 typeTransaction: TypeTransaction.negative,
                 amount: 84.45),
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Saturday 4th,  January 2023',
                 typeTransaction: TypeTransaction.positive,
                 amount: 137.26)
           ])
@@ -170,38 +170,38 @@ class TransactionsMocks {
     TransactionDetailByMonth(month: 'December', listofTransactions: [
       TransactionDetailByDayModel(
           day: 'MON',
-          dayNumber: 4,
+          dayNumber: 5,
           isToday: false,
           listofTransactions: [
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Monday 5th,  December 2023',
                 typeTransaction: TypeTransaction.negative,
                 amount: 420.16),
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Monday 5th,  December 2023',
                 typeTransaction: TypeTransaction.positive,
                 amount: 433.35),
           ]),
       TransactionDetailByDayModel(
           day: 'SAT',
-          dayNumber: 4,
+          dayNumber: 3,
           isToday: false,
           listofTransactions: [
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Saturday 3th,  December 2023',
                 typeTransaction: TypeTransaction.positive,
                 amount: 720.92),
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Saturday 3th,  December 2023',
                 typeTransaction: TypeTransaction.negative,
                 amount: 84.45),
             TransactionDetail(
                 movementName: 'Movement Name',
-                transactionDate: 'Monday 3th,  September 2023',
+                transactionDate: 'Saturday 3th,  December 2023',
                 typeTransaction: TypeTransaction.positive,
                 amount: 137.26)
           ])

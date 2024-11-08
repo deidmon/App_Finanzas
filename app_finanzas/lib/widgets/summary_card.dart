@@ -29,7 +29,7 @@ class SummaryCard extends StatelessWidget {
     );
     //
     return Container(
-      height: 92,
+      /* height: 92, */
       margin: const EdgeInsets.only(top: 8),
       padding: const EdgeInsets.all(16),
       decoration: const BoxDecoration(
@@ -59,6 +59,7 @@ class SummaryCard extends StatelessWidget {
           ),
           Expanded(
             child: Text(
+              textScaler: const TextScaler.linear(1),
               typeSummaryCard == TypeSummaryCard.incomes
                   ? 'Incomes'
                   : 'Spending',
@@ -79,6 +80,7 @@ class SummaryCard extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(2.0),
                   child: Text(
+                    textScaler: const TextScaler.linear(1),
                     period,
                     style: const TextStyle(
                       color: AppColors.brandLightColor,

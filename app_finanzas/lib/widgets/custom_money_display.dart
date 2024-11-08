@@ -42,6 +42,7 @@ class CustomMoneyDisplay extends StatelessWidget {
                 ),
           ),
           RichText(
+            textScaler: const TextScaler.linear(1),
             text: TextSpan(
               children: [
                 TextSpan(

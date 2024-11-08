@@ -77,7 +77,7 @@ class TransactionDetailByDay extends StatelessWidget {
           ),
         ),
         Container(
-          width: 340,
+          width: 310,
           margin: const EdgeInsets.only(left: 16),
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
@@ -128,7 +128,7 @@ class TransactionDetailPositive extends StatelessWidget {
           ),
         ),
         SizedBox(
-          width: 200,
+          width: 180,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -200,7 +200,7 @@ class TransactionDetailNegative extends StatelessWidget {
           ),
         ),
         SizedBox(
-          width: 200,
+          width: 180,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

@@ -55,7 +55,7 @@ class ProductDetailCard extends StatelessWidget {
         children: [
           Container(
             margin: const EdgeInsets.only(left: 16),
-            height: 79,
+            height: 69,
             width: 56,
             decoration: const BoxDecoration(
               color: AppColors.brandSecondaryColor,
@@ -121,7 +121,10 @@ class ProductDetailCard extends StatelessWidget {
               right: 16,
             ),
             height: 19,
-            width: 55,
+            padding: const EdgeInsets.symmetric(
+              horizontal: 5,
+            ),
+            /* width: 55, */
             decoration: BoxDecoration(
               borderRadius: const BorderRadius.all(
                 Radius.circular(19),

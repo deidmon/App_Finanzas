@@ -56,10 +56,10 @@ class _HomePageState extends State<HomePage> {
             bottomRight: Radius.circular(16),
           ),
         ),
-        toolbarHeight: 97,
+        toolbarHeight: 67,
         backgroundColor: AppColors.brandLightColor,
         title: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 45, 16, 12),
+          padding: const EdgeInsets.fromLTRB(16, 25, 16, 12),
           child: HomeAppBarTitle(
             //storeName: widget.storeName,
             storeName: UserProvider.of(context).userData.name,
@@ -103,7 +103,7 @@ class TopHomePageBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
-      height: 389,
+      /* height: 359, */
       width: MediaQuery.of(context).size.width,
       transform: Matrix4.translationValues(0, -12, 0),
       decoration: const BoxDecoration(
@@ -117,7 +117,7 @@ class TopHomePageBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            margin: const EdgeInsets.only(top: 56),
+            margin: const EdgeInsets.only(top: 16),
             child: Text(
               'Your Budget',
               style: Theme.of(context).textTheme.displaySmall,
@@ -166,8 +166,8 @@ class MidHomePageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(left: 16, right: 16),
-      height: 104,
+      padding: const EdgeInsets.all(16),
+      /* height: 104, */
       width: MediaQuery.of(context).size.width,
       decoration: const BoxDecoration(
         shape: BoxShape.rectangle,
@@ -178,7 +178,7 @@ class MidHomePageBody extends StatelessWidget {
         ),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ElevatedButton(
             style: categorieBtnStyle,
@@ -186,7 +186,7 @@ class MidHomePageBody extends StatelessWidget {
             child: const Padding(
               padding: EdgeInsets.symmetric(
                 vertical: 16,
-                horizontal: 40,
+                horizontal: 30,
               ),
               child: Text(
                 'Categories',
@@ -203,7 +203,7 @@ class MidHomePageBody extends StatelessWidget {
             child: const Padding(
               padding: EdgeInsets.symmetric(
                 vertical: 16,
-                horizontal: 20,
+                horizontal: 5,
               ),
               child: Text(
                 'Recent transaction',
@@ -228,8 +228,11 @@ class CategoriesWidget extends StatelessWidget {
     return ListView(
       children: [
         TextButton(
-          style: const ButtonStyle(alignment: Alignment.centerRight),
+          style: const ButtonStyle(
+            alignment: Alignment.centerRight,
+          ),
           child: const Text(
+            /* textScaler: TextScaler.linear(1), */
             'View All',
             style: TextStyle(
               fontWeight: FontWeight.bold,
@@ -276,8 +279,11 @@ class RecentTransactions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
       child: ListView(
+        padding: const EdgeInsets.only(
+          bottom: 16,
+        ),
         children: [
           TextButton(
             style: const ButtonStyle(alignment: Alignment.centerRight),
@@ -299,12 +305,12 @@ class RecentTransactions extends StatelessWidget {
             listofTransactions: [
               TransactionDetail(
                   movementName: 'Movement Name',
-                  transactionDate: 'Monday 3th,  September 2023',
+                  transactionDate: 'Tuesday 4th,  September 2023',
                   typeTransaction: TypeTransaction.negative,
                   amount: 420.16),
               TransactionDetail(
                   movementName: 'Movement Name',
-                  transactionDate: 'Monday 3th,  September 2023',
+                  transactionDate: 'Tuesday 4th,  September 2023',
                   typeTransaction: TypeTransaction.positive,
                   amount: 433.35)
             ],
