@@ -1,6 +1,7 @@
 import 'package:app_finanzas/config/app_routes.dart';
 import 'package:app_finanzas/design/colors.dart';
 import 'package:app_finanzas/design/copy.dart';
+import 'package:app_finanzas/pages/helpers/validate_input.dart';
 import 'package:app_finanzas/providers/user_provider.dart';
 import 'package:flutter/material.dart';
 
@@ -94,17 +95,9 @@ class LoginPageState extends State<LoginPage> {
                         padding: const EdgeInsets.only(left: 24, bottom: 4),
                         decoration: userContainerDecoration,
                         child: TextFormField(
+                          key: const Key('input-name'),
                           style: Theme.of(context).textTheme.labelSmall,
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return AppErrors.userError;
-                            }
-                            if (value.length >= 10) {
-                              return AppErrors.userErrorLen;
-                            }
-
-                            return null;
-                          },
+                          validator: (value) => validateInput(value),
                           onTap: () {
                             setState(() {
                               userContainerDecoration =
@@ -138,6 +131,7 @@ class LoginPageState extends State<LoginPage> {
                         margin: const EdgeInsets.symmetric(vertical: 24),
                         decoration: pswContainerDecoration,
                         child: TextFormField(
+                          key: const Key('input-password'),
                           obscureText: true,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
